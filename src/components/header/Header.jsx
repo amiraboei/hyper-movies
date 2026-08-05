@@ -10,8 +10,7 @@ const Header = () => {
     const [bg] = useState(defaultBg);
     const [hoverBg, setHoverBg] = useState(null);
     return (
-        <header
-            className="w-full min-h-screen bg-cover bg-center bg-no-repeat  transition-all duration-500"
+        <header className="w-full min-h-screen bg-cover bg-center bg-no-repeat  transition-all duration-500"
             style={{
                 backgroundImage: `linear-gradient(
                     rgba(0,0,0,0.3),
@@ -21,10 +20,11 @@ const Header = () => {
         >
 
             <div className="w-[70%] mx-auto">
+                
                 <Navigation />
                 <SearchBox />
                 <FollowUs />
-                <HeaderSlider setHoverBg={setHoverBg}/>
+                <HeaderSlider setHoverBg={setHoverBg} />
             </div>
 
         </header>
