@@ -8,38 +8,39 @@ const Navigation = () => {
         <>
             <nav className="flex items-center justify-between px-4 sm:px-6 lg:px-10 py-4 text-slate-300">
 
-                <div className="flex items-center gap-4 lg:gap-10">
+                <div className="flex items-baseline gap-4 lg:gap-10">
+                    <a href="/">
+                        <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">
+                            Heyper
+                            <span className="text-rose-500">Movies</span>
+                            <p className="text-[10px] sm:text-xs text-center text-slate-600">
+                                MOVIE REVIEW
+                            </p>
+                        </h1>
+                    </a>
 
-                    <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">
-                        Heyper
-                        <span className="text-rose-500">Movies</span>
-
-                        <p className="text-[10px] sm:text-xs text-center text-slate-600">
-                            MOVIE REVIEW
-                        </p>
-                    </h1>
 
                     <ul className="hidden lg:flex gap-6 xl:gap-8">
-                        <li><a href="#">MOVIES</a></li>
-                        <li><a href="#">TV SHOW</a></li>
-                        <li><a href="#">PEOPLE</a></li>
-                        <li><a href="#">MOVE</a></li>
+                        <li><a href="#" className=" hover:text-slate-50">MOVIES</a></li>
+                        <li><a href="#" className=" hover:text-slate-50">TV SHOW</a></li>
+                        <li><a href="#" className=" hover:text-slate-50">PEOPLE</a></li>
+                        <li><a href="#" className=" hover:text-slate-50">MOVE</a></li>
                     </ul>
 
                 </div>
 
                 <div>
-                    <ul className="flex items-center gap-3 sm:gap-5">
+                    <ul className="flex items-baseline gap-3 sm:gap-5">
 
                         <li className="hidden sm:block">
-                            <a href="#">LOGIN</a>
+                            <a href="#" className=" hover:text-slate-50">LOGIN</a>
                         </li>
 
                         <li>
                             <a
                                 href="#"
                                 className="hidden sm:block bg-rose-800 hover:bg-rose-500 px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-white transition">
-                                SIGN UP
+                                SIGN UP 
                             </a>
                         </li>
 

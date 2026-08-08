@@ -14,32 +14,32 @@ import { MdLocalMovies } from "react-icons/md";
 import { MdTv } from "react-icons/md";
 
 
-const movies = [movie1 ,movie2 ,movie3 ,movie4 ,movie2 ,movie3 ,movie1]
+const movies = [movie1, movie2, movie3, movie4, movie2, movie3, movie1]
 
 const MoviesList = () => {
     return (
         <div className="w-[70%] mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className=' my-3'>
                 <div className='md:flex flex-row gap-10 items-center pb-5'>
-                    <h2 className='text-2xl text-slate-300'>Whats Popular?</h2>
-                    <ul className='flex flex-col gap-5 text-rose-300 md:flex-row'>
-                        <li className='flex flex-row items-center gap-1'><BiMoviePlay className='text-rose-400'/> Streaming</li>
-                        <li className='flex flex-row items-center gap-1'><RiMovie2Line className='text-rose-400'/> On Tv</li>
-                        <li className='flex flex-row items-center gap-1'><BiCameraMovie className='text-rose-400'/> For Rent</li>
-                        <li className='flex flex-row items-center gap-1'><MdMovieEdit className='text-rose-400'/>In Theaters</li>
+                    <h2 className='text-2xl text-rose-400 '>Whats Popular?</h2>
+                    <ul className='flex flex-col gap-5 md:flex-row'>
+                        <li className='flex flex-row items-center gap-1  text-white'><BiMoviePlay className='text-r-white ' /> Streaming</li>
+                        <li className='flex flex-row items-center gap-1  text-rose-300'><RiMovie2Line className='text-rose-300 ' /> On Tv</li>
+                        <li className='flex flex-row items-center gap-1  text-white'><BiCameraMovie className='text-r-white ' /> For Rent</li>
+                        <li className='flex flex-row items-center gap-1  text-white'><MdMovieEdit className='text-r-white ' />In Theaters</li>
                     </ul>
                 </div>
-                <MoviesListSlider movies={movies}  />
+                <MoviesListSlider movies={movies} />
             </div>
-                        <div className=' my-3'>
+            <div className=' my-3'>
                 <div className='md:flex flex-row gap-10 items-center pb-5'>
-                    <h2 className='text-2xl text-slate-300'>Free To Whatch</h2>
-                    <ul className='flex flex-col gap-5 text-rose-300 md:flex-row'>
-                        <li className='flex flex-row items-center gap-1'><MdLocalMovies className='text-rose-400'/> movie</li>
-                        <li className='flex flex-row items-center gap-1'><MdTv className='text-rose-400'/>Tv</li>
+                    <h2 className='text-2xl text-rose-400'>Free To Whatch</h2>
+                    <ul className='flex flex-col gap-5  md:flex-row'>
+                        <li className='flex flex-row items-center gap-1 text-rose-300 text-xl'><MdLocalMovies className='text-rose-300' /> movie</li>
+                        <li className='flex flex-row items-center gap-1'><MdTv className='text-white' />Tv</li>
                     </ul>
                 </div>
-                <MoviesListSlider movies={movies}  />
+                <MoviesListSlider movies={movies} />
             </div>
         </div>
     );
