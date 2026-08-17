@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import axios from "axios";
 
 import "swiper/css";
 
@@ -14,6 +15,18 @@ import MoviesCadrt from "../movies/MoviesCadrt";
 const images = [movie1, movie2, movie3, movie4, movie5];
 
 const HeaderSlider = ({ setHoverBg , img }) => {
+  const[movies , setMovies] = useState([]);
+
+  async function loadMovies(){
+    const {data} = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=a86e43b051140791676e0184277c09dc');
+    setMovies(data.results);
+  }
+
+  useEffect(() => {
+    loadMovies();
+
+  },[])
+
   return (
     <section className="w-full px-4 sm:px-6 lg:px-8 py-6">
 
@@ -43,16 +56,15 @@ const HeaderSlider = ({ setHoverBg , img }) => {
           },
         }}
       >
-        {images.map((image, index) => (
+        {movies.map((movie) => (
           <SwiperSlide
-            key={index}
-            onMouseEnter={() => setHoverBg(image)}
-            onMouseLeave={() => setHoverBg(null)}
+            key={movie.id}
+            onMouseEnter={() => setHoverBg(`https://image.tmdb.org/t/p/original${movie.backdrop_path}`)}
           >
-            <MoviesCadrt img={image} />
+            <MoviesCadrt movie={movie} />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> 
 
     </section>
   );

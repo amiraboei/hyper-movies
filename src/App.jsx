@@ -1,12 +1,16 @@
+import { Outlet } from "react-router-dom"
 import Footer from "./components/footer/Footer"
 import Header from "./components/header/Header"
-import Main from "./components/main/Main"
+import { Toaster } from "react-hot-toast"
 
 function App() {
-  return(
+  return (
     <>
+      <Toaster />
       <Header />
-      <Main />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
 
     </>

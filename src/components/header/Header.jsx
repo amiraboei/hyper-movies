@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import Navigation from './navigation';
-import SearchBox from './SearchBox';
+import SearchBox from './SearchBox/SearchBox';
 import FollowUs from './FollowUs';
 import HeaderSlider from './HeaderSlider';
 import defaultBg from "../../assets/SwiperImage/bg.jfif";
 import movie1 from "../../assets/SwiperImage/movie1.jfif";
+import { useLocation } from 'react-router-dom';
 
 const Header = () => {
+    const location = useLocation();
     const [bg] = useState(defaultBg);
     const [hoverBg, setHoverBg] = useState(null);
     return (
-        <header className="w-full min-h-screen bg-cover bg-center bg-no-repeat  transition-all duration-500"
+        <header className={`w-full  bg-cover bg-center bg-no-repeat  transition-all duration-500 ${location.pathname !== '/' ? 'h-[180px]' : ''}`}
             style={{
                 backgroundImage: `linear-gradient(
                     rgba(0,0,0,0.3),
@@ -19,12 +21,16 @@ const Header = () => {
             }}
         >
 
-            <div className="w-[70%] mx-auto">
-                
+            <div className={`w-[70%] mx-auto`}>
+
                 <Navigation />
                 <SearchBox />
-                <FollowUs />
-                <HeaderSlider setHoverBg={setHoverBg} />
+                <div className={`${location.pathname !== "/" ? "hidden" : ""}`}>
+                    <FollowUs />
+                    <HeaderSlider setHoverBg={setHoverBg} />
+                </div >
+
+
             </div>
 
         </header>
